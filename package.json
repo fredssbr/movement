@@ -1,0 +1,25 @@
+{
+  "name": "movement",
+  "version": "1.0.0",
+  "description": "A project made to create movement",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fredssbr/movement.git"
+  },
+  "keywords": [
+    "movement"
+  ],
+  "author": "fredericochopin@gmail.com",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/fredssbr/movement/issues"
+  },
+  "homepage": "https://github.com/fredssbr/movement#readme",
+  "dependencies": {
+    "robotjs": "^0.5.1"
+  }
+}
