@@ -1,28 +1,24 @@
 // Move the mouse across the screen as a sine wave.
 var robot = require("robotjs");
 
-var intervalInSeconds = 10;
-
-// Speed up the mouse.
-robot.setMouseDelay(2);
-
-var twoPI = Math.PI * 2.0;
-var screenSize = robot.getScreenSize();
-var height = (screenSize.height / 2) - 10;
-var width = screenSize.width;
-
+var minIntervalInSeconds = 9;
+var maxIntervalInSeconds = 11;
+var actual = minIntervalInSeconds;
+var myFunction;
 
 function execute() {
-    for (var x = 0; x < width; x++)
-    {
-        y = height * Math.sin((twoPI * x) / width) + height;
-        robot.moveMouse(x, y);
-    }
+    console.log("Actual interval: " + actual + " - Actual time: " + new Date().toISOString());
+    actual = actual == minIntervalInSeconds ? maxIntervalInSeconds : minIntervalInSeconds;
+    robot.mouseClick();
+    clearInterval(myFunction);
+    myFunction = setInterval(function(){
+        execute();
+    }, actual * 60 * 1000);
  }
 
-setInterval(function(){
+myFunction = setInterval(function(){
     execute();
-}, intervalInSeconds * 1000);
+}, actual * 60 * 1000);
 
 
 
