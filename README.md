@@ -14,6 +14,8 @@ git clone https://github.com/fredssbr/movement.git
 cd movement
 # Entrar na branch clicker
 git checkout clicker
+# Instala dependências do RobotJS (necessário permissão de administrador)
+npm install --global --production windows-build-tools
 # instalar as dependências do programa
 npm install
 # Executar o programa (logo após executar esta linha, posicionar o mouse onde deseja que o clique seja repetido)
